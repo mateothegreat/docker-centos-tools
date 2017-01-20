@@ -9,7 +9,7 @@ ARGS=$6
 cd $1
 
 indent() { sed 's/^/    [docker build] /'; }
-echo "+ Building ibgateway container into image.."
+echo "+ Building $IMAGE_NAME container into image.."
 # exec 1> >(sed -r 's/^(.*)/\t- \1/g')
 
 docker build $ARGS -t  $REPO_HOST/$PROJECT_ID/$IMAGE_NAME:$IMAGE_VERSION . | indent
